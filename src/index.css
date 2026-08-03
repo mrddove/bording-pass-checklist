@@ -1,0 +1,42 @@
+:root {
+  --navy-deep: #12203a;
+  --navy: #1c2e52;
+  --navy-soft: #2a3f68;
+  --cream: #fbf3e4;
+  --cream-dim: #efe3cc;
+  --papaya: #ff7a45;
+  --papaya-dark: #e4602e;
+  --marigold: #e8a33d;
+  --sage: #6fa287;
+  --sage-dark: #4f8069;
+  --rust: #c1442d;
+  --ink: #2a2118;
+  --ink-soft: #6b5f4e;
+
+  --font-display: 'Fraunces', 'Iowan Old Style', serif;
+  --font-mono: 'Space Mono', ui-monospace, monospace;
+  --font-ui: 'Inter', system-ui, sans-serif;
+
+  --radius: 10px;
+  --edge: repeating-linear-gradient(
+    to right,
+    transparent 0 6px,
+    var(--navy) 6px 8px
+  );
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; /* 10px/16px = 0.625px  or 62.5%*/
+}
+
+body {
+  box-sizing: border-box;
+}
