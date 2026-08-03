@@ -1,25 +1,36 @@
 import styles from './style.module.scss'
 
 export default function PackingForm() {
+  function handleForm(formData: FormData) {
+    const qty = formData.get('qty')
+    const item = formData.get('item') as string
+
+    if (!item || item.trim() === '') {
+      console.log(qty, 'empty')
+      return
+    }
+    console.log({ id: crypto.randomUUID(), qty, item, isPacked: false })
+  }
+
   return (
     <section className={styles.counter} aria-labelledby="counter-heading">
       <h2 className={styles.counter__heading}>
         What are you packing for the trip?
       </h2>
-      <form className={styles.counter__form}>
+      <form action={handleForm} className={styles.counter__form}>
         <label className="visually-hidden">Quantity</label>
         <select id="qty" name="qty" className={styles.counter__qty}>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
+          {Array.from({ length: 20 }).map((_, i) => (
+            <option key={i + 1} value={i + 1}>
+              {i + 1}
+            </option>
+          ))}
         </select>
 
         <label className="visually-hidden" htmlFor="item">
           Item name
         </label>
         <input
-          id="item"
           name="item"
           type="text"
           className={styles.counter__input}
