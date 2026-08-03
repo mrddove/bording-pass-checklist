@@ -9,7 +9,7 @@ export default function Header() {
             d="M24 4C15 4 8 14 8 24c0 12 16 20 16 20s16-8 16-20c0-10-7-20-16-20z"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
+            strokeWidth="2"
           />
           <circle cx="24" cy="22" r="5" fill="currentColor" />
         </svg>
