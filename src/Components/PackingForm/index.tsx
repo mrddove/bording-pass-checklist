@@ -1,15 +1,27 @@
+import type { BoardingChecklist } from '../../assets/data'
+import { useCheckList } from '../../contexts/ChecklistProvider'
 import styles from './style.module.scss'
 
 export default function PackingForm() {
-  function handleForm(formData: FormData) {
-    const qty = formData.get('qty')
-    const item = formData.get('item') as string
+  const { addCheckList } = useCheckList()
 
-    if (!item || item.trim() === '') {
-      console.log(qty, 'empty')
+  function handleForm(formData: FormData): void {
+    const qty = formData.get('qty') as string
+    const name = formData.get('item') as string
+
+    if (!name || name.trim() === '') {
+      console.log({ error: 'The input is empty' })
       return
     }
-    console.log({ id: crypto.randomUUID(), qty, item, isPacked: false })
+
+    const newCheckList: BoardingChecklist = {
+      id: String(Date.now()),
+      quantity: Number(qty),
+      name,
+      isPacked: false,
+    }
+
+    addCheckList(newCheckList)
   }
 
   return (
