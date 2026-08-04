@@ -10,7 +10,7 @@ export default function PackingForm() {
     const name = formData.get('item') as string
 
     if (!name || name.trim() === '') {
-      console.log({ error: 'The input is empty' })
+      alert(JSON.stringify({ error: 'The input is empty' }, null, 2))
       return
     }
 
