@@ -1,0 +1,97 @@
+.packinglist {
+  padding: 0.5rem clamp(1rem, 4vw, 2.5rem) 1rem;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--navy-soft);
+    border: 1.5px dashed rgba(251, 243, 228, 0.28);
+    border-radius: var(--radius);
+    padding: 0.85rem 1rem 0.85rem 2.4rem;
+  }
+
+  &__check {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+    flex: 0 0 auto;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      width: 2.2rem;
+      height: 2.2rem;
+      cursor: pointer;
+
+      &:checked {
+        + .packinglist__stamp {
+          background: var(--sage);
+          border-color: var(--sage);
+        }
+      }
+
+      &:checked {
+        + .packinglist__stamp:after {
+          content: '✓';
+          font-size: 1.3rem;
+          font-weight: 700;
+          color: var(--navy-deep);
+        }
+      }
+    }
+  }
+
+  &__stamp {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    border: 0.2rem solid var(--marigold);
+    display: grid;
+    place-items: center;
+  }
+
+  &__qty {
+    font-family: var(--font-mono);
+    font-size: 1.6rem;
+    color: var(--marigold);
+    flex: 0 0 auto;
+  }
+
+  &__name {
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: var(--cream);
+    flex: 1;
+  }
+
+  &__remove {
+    flex: 0 0 auto;
+    border: none;
+    background: transparent;
+    color: var(--rust);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 6px;
+
+    &:hover {
+      background: rgba(193, 68, 45, 0.15);
+    }
+  }
+}
+
+//conditionaly add to the packinglist--packed class to the Li element
+.packinglist--packed .packinglist__name {
+  text-decoration: line-through;
+  text-decoration-color: var(--sage);
+  color: rgba(251, 243, 228, 0.55);
+}
