@@ -22,12 +22,19 @@ function ChecklistProvider({ children }: ChecklistProviderType) {
     )
   }
 
+  function handleDelete(id: string) {
+    setCheckList((prevCheckList) =>
+      prevCheckList.filter((item) => item.id !== id),
+    )
+  }
+
   return (
     <ChecklistContext.Provider
       value={{
         checkList,
         addCheckList,
         handleToggleComplete,
+        handleDelete,
       }}
     >
       {children}

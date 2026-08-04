@@ -5,6 +5,7 @@ export type ChecklistContextType = {
   checkList: BoardingChecklist[]
   addCheckList: (item: BoardingChecklist) => void
   handleToggleComplete: (id: string) => void
+  handleDelete: (id: string) => void
 }
 
 export type ChecklistProviderType = {

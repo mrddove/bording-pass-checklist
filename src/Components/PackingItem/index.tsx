@@ -7,7 +7,8 @@ type PackingItemProps = {
 }
 
 export default function PackingItem({ list, styles }: PackingItemProps) {
-  const { handleToggleComplete } = useCheckList()
+  const { handleToggleComplete, handleDelete } = useCheckList()
+
   return (
     <li
       className={`${styles.packinglist__item} ${list.isPacked ? styles['packinglist--packed'] : null}`}
@@ -26,6 +27,7 @@ export default function PackingItem({ list, styles }: PackingItemProps) {
         type="button"
         className={styles.packinglist__remove}
         aria-label="Remove Passports from list"
+        onClick={() => handleDelete(list.id)}
       >
         ✕
       </button>
