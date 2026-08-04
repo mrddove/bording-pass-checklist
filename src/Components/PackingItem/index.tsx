@@ -1,4 +1,5 @@
 import type { BoardingChecklist } from '../../assets/data'
+import { useCheckList } from '../../contexts/ChecklistProvider'
 
 type PackingItemProps = {
   list: BoardingChecklist
@@ -6,10 +7,17 @@ type PackingItemProps = {
 }
 
 export default function PackingItem({ list, styles }: PackingItemProps) {
+  const { handleToggleComplete } = useCheckList()
   return (
-    <li className={styles.packinglist__item}>
+    <li
+      className={`${styles.packinglist__item} ${list.isPacked ? styles['packinglist--packed'] : null}`}
+    >
       <label className={styles.packinglist__check}>
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          checked={list.isPacked}
+          onChange={() => handleToggleComplete(list.id)}
+        />
         <span className={styles.packinglist__stamp} aria-hidden="true"></span>
       </label>
       <span className={styles.packinglist__qty}>{list.quantity}×</span>

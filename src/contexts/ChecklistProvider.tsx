@@ -14,11 +14,20 @@ function ChecklistProvider({ children }: ChecklistProviderType) {
     setCheckList((prevCheckList) => [...prevCheckList, newCheckList])
   }
 
+  function handleToggleComplete(id: string) {
+    setCheckList((prevCheckList) =>
+      prevCheckList.map((item) =>
+        item.id === id ? { ...item, isPacked: !item.isPacked } : item,
+      ),
+    )
+  }
+
   return (
     <ChecklistContext.Provider
       value={{
         checkList,
         addCheckList,
+        handleToggleComplete,
       }}
     >
       {children}
