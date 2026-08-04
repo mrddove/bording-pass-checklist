@@ -2,7 +2,7 @@ export type BoardingChecklist = {
   id: string
   quantity: number
   name: string
-  isPacked: false
+  isPacked: boolean
 }
 
 export default [
