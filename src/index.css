@@ -52,3 +52,7 @@ body {
   color: var(--cream);
   font-family: var(--font-ui);
 }
+
+ul {
+  list-style: none;
+}
