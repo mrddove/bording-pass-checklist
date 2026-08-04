@@ -1,3 +1,4 @@
+import Footer from './Components/Footer'
 import Header from './Components/Header'
 import PackingForm from './Components/PackingForm'
 import PackingList from './Components/PackingList'
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <PackingForm />
       <PackingList />
+      <Footer />
     </>
   )
 }
