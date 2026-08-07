@@ -13,7 +13,9 @@ export default function Footer() {
         <span aria-hidden="true">🧳</span>
         You have <strong>{checkList.length}</strong> items on your list, and you
         already packed <strong>{packedCount.length}</strong>
-        <span className={styles.footer__pct}>({percent}%)</span>
+        <span className={styles.footer__pct}>
+          ({isNaN(percent) ? 0 : percent}%)
+        </span>
       </div>
       <div
         className={styles.footer__track}

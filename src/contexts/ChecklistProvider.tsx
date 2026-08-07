@@ -28,6 +28,10 @@ function ChecklistProvider({ children }: ChecklistProviderType) {
     )
   }
 
+  function handleClearList() {
+    setCheckList(() => [])
+  }
+
   return (
     <ChecklistContext.Provider
       value={{
@@ -35,6 +39,7 @@ function ChecklistProvider({ children }: ChecklistProviderType) {
         addCheckList,
         handleToggleComplete,
         handleDelete,
+        handleClearList,
       }}
     >
       {children}
