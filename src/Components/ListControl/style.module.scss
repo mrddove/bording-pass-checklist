@@ -1,0 +1,72 @@
+.listbar {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.5rem 1rem 2rem;
+
+  &__select {
+    appearance: none;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 1.4rem;
+    border-radius: 5rem;
+    padding: 0.6rem 2.3rem 0.6rem 1.3rem;
+    border: 1.5px solid var(--marigold);
+    background-color: transparent;
+    // Custon Arrow down appearance  color gold
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23E8A33D' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 1.1rem center;
+    background-size: 1rem 0.7rem;
+    color: var(--marigold);
+    cursor: pointer;
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease;
+
+    &:hover {
+      background-color: var(--marigold);
+      color: var(--navy-deep);
+      // Custon Arrow down appearance hover mode color blue
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%2312203A' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 1.1rem center;
+      background-size: 1rem 0.7rem;
+    }
+
+    option {
+      background: var(--cream);
+      color: var(--ink);
+    }
+  }
+
+  &__btn {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 1.4rem;
+    border-radius: 5rem;
+    padding: 0.6rem 1.3rem;
+    border: 1.5px solid var(--marigold);
+    background: transparent;
+    color: var(--marigold);
+    cursor: pointer;
+    transition:
+      background 0.15s ease,
+      color 0.15s ease;
+
+    // &:hover {
+    //   background: var(--marigold);
+    //   color: var(--navy-deep);
+    // }
+
+    &--ghost {
+      border-color: var(--rust);
+      color: var(--rust);
+
+      &:hover {
+        background: var(--rust);
+        color: var(--cream);
+      }
+    }
+  }
+}
