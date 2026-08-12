@@ -9,6 +9,7 @@ const ChecklistContext = createContext<ChecklistContextType | null>(null)
 
 function ChecklistProvider({ children }: ChecklistProviderType) {
   const [checkList, setCheckList] = useState<BoardingChecklist[]>(checkListData)
+  const [sortBy, setSortBy] = useState('inputOrder')
 
   function addCheckList(newCheckList: BoardingChecklist) {
     setCheckList((prevCheckList) => [...prevCheckList, newCheckList])
@@ -32,14 +33,20 @@ function ChecklistProvider({ children }: ChecklistProviderType) {
     setCheckList(() => [])
   }
 
+  function handleSortList(value: string) {
+    setSortBy(() => value)
+  }
+
   return (
     <ChecklistContext.Provider
       value={{
+        sortBy,
         checkList,
         addCheckList,
         handleToggleComplete,
         handleDelete,
         handleClearList,
+        handleSortList,
       }}
     >
       {children}
