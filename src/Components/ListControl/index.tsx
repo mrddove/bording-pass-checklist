@@ -4,14 +4,18 @@ import { options } from './localdata'
 import styles from './style.module.scss'
 
 export default function ListControl() {
-  const { handleClearList } = useCheckList()
+  const { handleClearList, handleSortList, sortBy } = useCheckList()
+
   return (
     <section className={styles.listbar} aria-label="List controls">
       <SelecField
         label="Sort list"
-        name="sort"
-        styles={styles}
+        value={sortBy}
+        styles={styles.listbar__select}
         options={options}
+        onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+          handleSortList(e.target.value)
+        }
       />
       <button
         type="button"
