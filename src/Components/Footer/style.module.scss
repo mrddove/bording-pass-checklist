@@ -1,0 +1,31 @@
+.footer {
+  background: var(--sage);
+  color: var(--navy-deep);
+  padding: 2rem clamp(2rem, 5vw, 3.5rem) 2.3rem;
+
+  &__text {
+    text-align: center;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin: 0 0 0.6rem;
+  }
+  &__pct {
+    font-family: var(--font-mono);
+    font-weight: 400;
+  }
+  &__track {
+    max-width: 42rem;
+    margin: 0 auto;
+    height: 0.8rem;
+    border-radius: 5rem;
+    background: rgba(18, 32, 58, 0.25);
+    overflow: hidden;
+  }
+  &__fill {
+    width: 0%;
+    height: 100%;
+    background: var(--navy-deep);
+    border-radius: 5rem;
+  }
+}
