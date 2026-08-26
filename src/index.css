@@ -56,3 +56,9 @@ body {
 ul {
   list-style: none;
 }
+
+.container {
+  width: 100%;
+  max-width: 100rem;
+  margin: 0 auto;
+}

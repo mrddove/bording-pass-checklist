@@ -9,9 +9,11 @@ function App() {
   return (
     <ChecklistProvider>
       <Header />
-      <PackingForm />
-      <PackingList />
-      <ListControl />
+      <div className="container">
+        <PackingForm />
+        <PackingList />
+        <ListControl />
+      </div>
       <Footer />
     </ChecklistProvider>
   )
